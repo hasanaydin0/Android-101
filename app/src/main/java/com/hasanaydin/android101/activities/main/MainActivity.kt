@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         adapter = MainActivityRecyclerAdapter(viewModel.resultList)
         binding.recycler.adapter = adapter
+
+
         binding.button.setOnClickListener {
             val result = viewModel.sum(binding.number1.text.toString().toInt(),binding.number2.text.toString().toInt())
             binding.sonuc.text = "Sonuc = $result"
