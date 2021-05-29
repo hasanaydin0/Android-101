@@ -3,10 +3,11 @@ package com.hasanaydin.android101.activities.sub
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hasanaydin.android101.activities.Calculation
 import com.hasanaydin.android101.databinding.ItemRecyclerSubBinding
 import com.hasanaydin.android101.databinding.ItemRecyclerSumBinding
 
-class SubActivityRecyclerAdapter(private val dataSet: ArrayList<Int>) :
+class SubActivityRecyclerAdapter(private val dataSet: ArrayList<Calculation>) :
     RecyclerView.Adapter<SubActivityRecyclerAdapter.ViewHolder>() {
     private lateinit var binding : ItemRecyclerSubBinding
     /**
@@ -14,8 +15,8 @@ class SubActivityRecyclerAdapter(private val dataSet: ArrayList<Int>) :
      * (custom ViewHolder).
      */
     class ViewHolder(val binding: ItemRecyclerSubBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(value:Int){
-            binding.item1.text=value.toString()
+        fun bind(value:Calculation){
+            binding.item1.text="${value.value1} + ${value.value2} = ${value.result}"
         }
     }
 
