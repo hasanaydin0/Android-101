@@ -2,16 +2,18 @@ package com.hasanaydin.android101
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import com.hasanaydin.android101.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
+    lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        button.setOnClickListener {
-            val result =  sum(number1.text.toString().toInt(),number2.text.toString().toInt())
-            sonuc.text = "Sonuc = $result"
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding.button.setOnClickListener {
+            val result =  sum(binding.number1.text.toString().toInt(),binding.number2.text.toString().toInt())
+            binding.sonuc.text = "Sonuc = $result"
         }
 
     }
