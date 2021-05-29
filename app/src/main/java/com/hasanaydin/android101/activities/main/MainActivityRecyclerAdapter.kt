@@ -3,9 +3,10 @@ package com.hasanaydin.android101.activities.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.hasanaydin.android101.activities.Calculation
 import com.hasanaydin.android101.databinding.ItemRecyclerSumBinding
 
-class MainActivityRecyclerAdapter(private val dataSet: ArrayList<Int>) :
+class MainActivityRecyclerAdapter(private val dataSet: ArrayList<Calculation>) :
     RecyclerView.Adapter<MainActivityRecyclerAdapter.ViewHolder>() {
     private lateinit var binding : ItemRecyclerSumBinding
     /**
@@ -13,8 +14,8 @@ class MainActivityRecyclerAdapter(private val dataSet: ArrayList<Int>) :
      * (custom ViewHolder).
      */
     class ViewHolder(val binding: ItemRecyclerSumBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(value:Int){
-            binding.textView.text=value.toString()
+        fun bind(value:Calculation){
+            binding.textView.text="${value.value1} + ${value.value2} = ${value.result}"
         }
     }
 
