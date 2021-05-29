@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var binding:ActivityMainBinding
     lateinit var viewModel: MainActivityViewModel
+    lateinit var adapter: MainActivityRecyclerAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,9 +24,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         viewModel = ViewModelProviders.of(this).get(MainActivityViewModel::class.java)
 
+        adapter = MainActivityRecyclerAdapter(viewModel.resultList)
+        binding.recycler.adapter = adapter
         binding.button.setOnClickListener {
             val result = viewModel.sum(binding.number1.text.toString().toInt(),binding.number2.text.toString().toInt())
             binding.sonuc.text = "Sonuc = $result"
+            adapter.notifyDataSetChanged()
         }
 
         binding.nextActivity.setOnClickListener {
