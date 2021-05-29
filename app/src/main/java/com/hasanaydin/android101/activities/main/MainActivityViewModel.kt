@@ -1,4 +1,4 @@
-package com.hasanaydin.android101
+package com.hasanaydin.android101.activities.main
 
 import androidx.lifecycle.ViewModel
 

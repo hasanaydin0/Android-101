@@ -1,9 +1,9 @@
-package com.hasanaydin.android101
+package com.hasanaydin.android101.activities.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.hasanaydin.android101.R
 import com.hasanaydin.android101.databinding.ActivityMainBinding
 
 
