@@ -1,8 +1,10 @@
 package com.hasanaydin.android101.activities.main
 
 import android.content.Intent
+import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProviders
 import com.hasanaydin.android101.R
 import com.hasanaydin.android101.activities.sub.SubsActivity
@@ -32,6 +34,18 @@ class MainActivity : AppCompatActivity() {
             val result = viewModel.sum(binding.number1.text.toString().toInt(),binding.number2.text.toString().toInt())
             binding.sonuc.text = "Sonuc = $result"
             adapter.notifyDataSetChanged()
+
+            if (viewModel.resultList.size >= 2){
+                val matc = viewModel.matc(viewModel.resultList[viewModel.resultList.size-2].result,viewModel.resultList[viewModel.resultList.size-1].result)
+
+                if (matc){
+                    binding.bingo.visibility = View.VISIBLE
+                }else{
+                    binding.bingo.visibility = View.GONE
+                }
+            }
+
+
         }
 
         binding.nextActivity.setOnClickListener {

@@ -14,6 +14,13 @@ class MainActivityViewModel : ViewModel() {
         resultList.add(calc)
         println(resultList)
         return z
+
+    }
+
+    fun matc(valueOld:Int,valueNew:Int):Boolean{
+
+        return valueOld == valueNew
+
     }
 
 

@@ -72,5 +72,15 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="vertical"/>
 
+        <TextView
+            android:id="@+id/bingo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bingo"
+            android:textSize="35sp"
+            android:visibility="gone"
+            android:textColor="@color/blue"/>
+
+
 </LinearLayout>
 
